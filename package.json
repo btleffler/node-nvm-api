@@ -23,5 +23,8 @@
   "dependencies": {
     "async": "^1.5.0",
     "semver": "^5.1.0"
+  },
+  "devDependencies": {
+    "moment": "^2.10.6"
   }
 }
