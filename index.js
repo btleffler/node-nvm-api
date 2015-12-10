@@ -1,8 +1,6 @@
 var Async = require("async"),
-	EventEmitter = require("events"),
 	Path = require("path"),
-	Semver = require("semver"),
-	Util = require("util");
+	Semver = require("semver");
 
 var LIB = Path.join(__dirname, "lib"),
 	COMMANDS;
@@ -15,8 +13,6 @@ if (require("os").type() === "Linux") {
 
 function NvmApi () {
 	var self = this;
-
-	EventEmitter.call(this);
 
 	Object.defineProperty(this, "initialized", {
 		"value": false,
@@ -90,19 +86,24 @@ function NvmApi () {
 		}
 
 		self.initialized = true;
-		self.emit("ready", self);
+
+		if (self.__data.hasOwnProperty("callbacks")) {
+			Async.each(self.__data.callbacks, function execLoadedCbs(func, cb) {
+				func.call(self, self);
+				cb();
+			});
+		}
 	});
 
 	return this;
 }
 
-Util.inherits(NvmApi, EventEmitter);
-
 NvmApi.prototype.load = function loadNvmApi (cb) {
 	if (this.initialized) {
 		cb.call(this, this);
 	} else {
-		this.on("ready", cb);
+		this.__data.callbacks = this.__data.callbacks || [];
+		this.__data.callbacks.push(cb);
 	}
 
 	return this;
