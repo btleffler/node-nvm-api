@@ -1,5 +1,5 @@
 {
-  "name": "node-nvm-api",
+  "name": "nvm-api",
   "version": "0.0.1",
   "description": "Node Module Wrapper to use NVM programmatically",
   "main": "index.js",
