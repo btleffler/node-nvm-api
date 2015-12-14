@@ -209,8 +209,9 @@ NvmApi.prototype.version = function currentNvmVersion (refresh, cb) {
  * @param  {Function} cb      function (err, pathToNode<String>) {}
  * @return {NvmApi}           The NvmApi instance
  */
-NvmApi.prototype.which = function currentNodePath (refresh, version, cb) {
-	var self = this;
+NvmApi.prototype.which = function currentNodePath () {
+	var self = this,
+		refresh, version, cb;
 
 	Array.prototype.slice.call(arguments).forEach(function (param) {
 		if (typeof param === "function") {
