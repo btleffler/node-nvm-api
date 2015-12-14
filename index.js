@@ -212,7 +212,7 @@ NvmApi.prototype.version = function currentNvmVersion (refresh, cb) {
 NvmApi.prototype.which = function currentNodePath (refresh, version, cb) {
 	var self = this;
 
-	arguments.forEach(function (param) {
+	Array.prototype.splice.call(arguments).forEach(function (param) {
 		if (typeof param === "function") {
 			cb = param;
 			return;
