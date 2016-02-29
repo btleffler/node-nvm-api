@@ -1,6 +1,6 @@
 {
-  "name": "node-nvm-api",
-  "version": "0.0.1",
+  "name": "nvm-api",
+  "version": "0.0.4",
   "description": "Node Module Wrapper to use NVM programmatically",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/btleffler/node-nvm-api.git"
+    "url": "git+ssh://git@github.com/btleffler/node-nvm-api.git"
   },
   "keywords": [
     "nvm",
@@ -17,14 +17,12 @@
   "author": "Benjamin Leffler <btleffler@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/btleffler/node-nvm-api/issues"
+    "url": "https://github.com/btleffler/node-nvm-api/issues"
   },
-  "homepage": "https://gitlab.com/btleffler/node-nvm-api#README",
+  "homepage": "https://github.com/btleffler/node-nvm-api#README",
   "dependencies": {
     "async": "^1.5.0",
     "semver": "^5.1.0"
   },
-  "devDependencies": {
-    "moment": "^2.10.6"
-  }
+  "devDependencies": {}
 }
