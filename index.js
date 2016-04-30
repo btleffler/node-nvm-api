@@ -8,7 +8,8 @@ var Async = require("async"),
 var LIB = Path.join(__dirname, "lib"),
 	COMMANDS;
 
-if (require("os").type() === "Linux") {
+var osType = require("os").type();
+if (osType === "Linux" || osType === "Darwin") {
 	COMMANDS = require(Path.join(LIB, "linux"));
 } else {
 	COMMANDS = require(Path.join(LIB, "windows"));
